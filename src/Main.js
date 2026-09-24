@@ -4,71 +4,42 @@ import qBank from "./QuestionBank";
 import Score from "./Score";
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            questionBank: qBank,
-            currentQuestion: 0,
-            selectedOption: "",
-            score: 0,
-            quizEnd: false,
-        };
-    }
+  state = { currentQuestion: 0, selectedOption: "", score: 0, quizEnd: false };
 
-    handleOptionChange = (e) => {
-        this.setState({ selectedOption: e.target.value });
-    };
+  handleOptionChange = (event) => this.setState({ selectedOption: event.target.value });
 
-    handleFormSubmit = (e) => {
-        e.preventDefault();
-        this.checkAnswer();
-        this.handleNextQuestion();
-    };
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    const { currentQuestion, selectedOption, score } = this.state;
+    const isCorrect = selectedOption === qBank[currentQuestion].answer;
+    const nextScore = score + (isCorrect ? 1 : 0);
+    const isLastQuestion = currentQuestion + 1 >= qBank.length;
 
-    checkAnswer = () => {
-        const { questionBank, currentQuestion, selectedOption, score } = this.state;
-        if (selectedOption === questionBank[currentQuestion].answer) {
-            this.setState((prevState) => ({ score: prevState.score + 1 }));
-        }
-    };
+    this.setState({
+      score: nextScore,
+      currentQuestion: isLastQuestion ? currentQuestion : currentQuestion + 1,
+      selectedOption: "",
+      quizEnd: isLastQuestion,
+    });
+  };
 
-    handleNextQuestion = () => {
-        const { questionBank, currentQuestion } = this.state;
-        if (currentQuestion + 1 < questionBank.length) {
-            this.setState((prevState) => ({
-                currentQuestion: prevState.currentQuestion + 1,
-                selectedOption: "",
-            }));
-        } else {
-            this.setState({
-                quizEnd: true,
-            });
-        }
-    };
+  handleRestart = () => this.setState({ currentQuestion: 0, selectedOption: "", score: 0, quizEnd: false });
 
-    render() {
-        const { questionBank, currentQuestion, selectedOption, score, quizEnd } =
-            this.state;
-        return (
-            <div className="App d-flex flex-column align-items-center justify-content-center">
-                <h1 className="app-title">QUIZ APP</h1>
-                {!quizEnd ? (
-                    <Question
-                        question={questionBank[currentQuestion]}
-                        selectedOption={selectedOption}
-                        onOptionChange={this.handleOptionChange}
-                        onSubmit={this.handleFormSubmit}
-                    />
-                ) : (
-                    <Score
-                        score={score}
-                        onNextQuestion={this.handleNextQuestion}
-                        className="score"
-                    />
-                )}
-            </div>
-        );
-    }
+  render() {
+    const { currentQuestion, selectedOption, score, quizEnd } = this.state;
+    return (
+      <main className="quizContent">
+        <section className="quizIntro">
+          <p className="eyebrow">Quick knowledge check</p>
+          <h1>How well do you know Indian capitals?</h1>
+          <p>Choose one answer for each question. You can restart the quiz whenever you want.</p>
+        </section>
+        <section className="quizCard" aria-live="polite">
+          {!quizEnd ? <Question question={qBank[currentQuestion]} selectedOption={selectedOption} onOptionChange={this.handleOptionChange} onSubmit={this.handleFormSubmit} totalQuestions={qBank.length} /> : <Score score={score} total={qBank.length} onRestart={this.handleRestart} />}
+        </section>
+      </main>
+    );
+  }
 }
 
 export default Main;
