@@ -8,6 +8,7 @@ A responsive React quiz that tests knowledge of Indian capitals with clear answe
 - Accessible radio options and disabled submit state until an answer is selected
 - Progress indicator, final score and restart action
 - Responsive fixed header and icon-only footer links
+- Floating go-to-top control with smooth scrolling
 
 ## Tech Stack
 
