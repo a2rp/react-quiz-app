@@ -43,7 +43,7 @@ function App() {
     <div className="quizApp">
       <header className="siteHeader">
         <a className="brand" href="https://github.com/a2rp/react-quiz-app" target="_blank" rel="noopener noreferrer">
-          <img src={process.env.PUBLIC_URL + "/logo.png"} alt="Ashish Ranjan logo" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Ashish Ranjan logo" />
           <span>Capital Quiz</span>
         </a>
         <span className="headerNote">Test your general knowledge</span>

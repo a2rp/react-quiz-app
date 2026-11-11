@@ -2,7 +2,7 @@ const qBank = [
     {
         id: 1,
         question: "What is the capital of Haryana?",
-        options: ["Yamunanagar", "Panipat", "Gurgaon", "Chandigarh"],
+        options: ["Yamunanagar", "Panipat", "Gurugram", "Chandigarh"],
         answer: "Chandigarh",
     },
     {
@@ -14,19 +14,19 @@ const qBank = [
     {
         id: 3,
         question: "What is the capital of India?",
-        options: ["Delhi", "Mumbai", "Kolkata", "Chennai"],
-        answer: "Delhi"
+        options: ["New Delhi", "Mumbai", "Kolkata", "Chennai"],
+        answer: "New Delhi"
     },
     {
         id: 4,
-        question: "What is the capital of Uttarakhad?",
-        options: ["Roorkee", "Haridwar", "Dehradun", "Nanital"],
+        question: "Which city is Uttarakhand's temporary capital?",
+        options: ["Roorkee", "Haridwar", "Dehradun", "Nainital"],
         answer: "Dehradun"
     },
     {
         id: 5,
         question: "What is capital of Uttar Pradesh?",
-        options: ["GB Nagar", "Lucknow", "Prayagraj", "Agra"],
+        options: ["Noida", "Lucknow", "Prayagraj", "Agra"],
         answer: "Lucknow"
     },
 ]

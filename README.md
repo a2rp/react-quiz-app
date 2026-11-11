@@ -1,6 +1,6 @@
 # Capital Quiz
 
-A responsive React quiz that tests knowledge of Indian capitals with clear answer choices, progress feedback, score tracking and restart support.
+A responsive five-question quiz about Indian capitals with clear answer choices, progress feedback, score tracking and restart support.
 
 ## Features
 
@@ -12,13 +12,13 @@ A responsive React quiz that tests knowledge of Indian capitals with clear answe
 
 ## Tech Stack
 
-React, JavaScript, Create React App and CSS.
+React, JavaScript, Vite, Vitest and CSS. Use Node.js 20.19+ or 22.12+.
 
 ## Run locally
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ## Build and deploy
@@ -27,6 +27,8 @@ npm start
 npm run build
 npm run deploy
 ```
+
+Run the existing component test with `npm test`.
 
 Live URL: [https://a2rp.github.io/react-quiz-app/](https://a2rp.github.io/react-quiz-app/)
 
