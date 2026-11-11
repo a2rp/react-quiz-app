@@ -19,13 +19,13 @@ const qBank = [
     },
     {
         id: 4,
-        question: "Which city is Uttarakhand's temporary capital?",
-        options: ["Roorkee", "Haridwar", "Dehradun", "Nainital"],
+        question: "Which city is listed as Uttarakhand's temporary capital, alongside Gairsain as its summer capital?",
+        options: ["Nainital", "Haridwar", "Dehradun", "Gairsain"],
         answer: "Dehradun"
     },
     {
         id: 5,
-        question: "What is capital of Uttar Pradesh?",
+        question: "What is the capital of Uttar Pradesh?",
         options: ["Noida", "Lucknow", "Prayagraj", "Agra"],
         answer: "Lucknow"
     },

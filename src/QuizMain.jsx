@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Question from "./Question";
+import Question from "./Question.jsx";
 import qBank from "./QuestionBank";
-import Score from "./Score";
+import Score from "./Score.jsx";
 
 class Main extends Component {
   state = { currentQuestion: 0, selectedOption: "", score: 0, quizEnd: false };

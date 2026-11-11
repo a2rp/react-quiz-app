@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Options from "./Option";
+import Options from "./Option.jsx";
 
 class Question extends Component {
   render() {

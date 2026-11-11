@@ -13,7 +13,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import "./App.css";
-import Main from "./Main";
+import Main from "./QuizMain.jsx";
 
 const links = [
   { label: "Portfolio", href: "https://www.ashishranjan.net/", icon: FaGlobe },
